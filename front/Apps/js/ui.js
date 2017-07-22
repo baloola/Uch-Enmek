@@ -15,6 +15,8 @@ $(document).ready(function() {
 
 function toggle() {
   if (jj) {
+      labelEntity.label.show=false;
+    viewer.selectedEntity = undefined;
     tog();
 
   }
@@ -105,7 +107,9 @@ function grave() {
 }
 
 function back() {
+  labelEntity.label.show=false;
 viewer.navigationHelpButton.container.hidden=false;
+viewer.selectedEntity = undefined;
   document.getElementById("kurgans").style.visibility= "hidden";
 
   reset();

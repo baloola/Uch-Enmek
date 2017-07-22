@@ -13162,7 +13162,7 @@
             this.eventHelper = new EventHelper;
             this.controls = options.controls;
             if (!defined(this.controls)) {
-                this.controls = [new ZoomNavigationControl(this.terria, true), new ResetViewNavigationControl(this.terria), new ZoomNavigationControl(this.terria, false)]
+                this.controls = [new ZoomNavigationControl(this.terria, true), new ZoomNavigationControl(this.terria, false)]
             }
             this.svgCompassOuterRing = svgCompassOuterRing;
             this.svgCompassGyro = svgCompassGyro;

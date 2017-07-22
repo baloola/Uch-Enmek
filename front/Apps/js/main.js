@@ -10,7 +10,8 @@ var viewer = new Cesium.Viewer('cesiumContainer', {
 
 });
 //  viewer.extend(Cesium.viewerCesiumInspectorMixin);
-viewer.extend(Cesium.viewerCesiumNavigationMixin, {});
+
+viewer.extend(Cesium.viewerCesiumNavigationMixin,{});
 viewer.infoBox.frame.sandbox = "allow-same-origin allow-top-navigation allow-pointer-lock allow-popups allow-forms allow-scripts";
 viewer.infoBox.frame.removeAttribute('sandbox');
 viewer.scene.globe.depthTestAgainstTerrain = true;
@@ -460,6 +461,7 @@ handler.setInputAction(function(movement) {
           var heightString = cartographic.height.toFixed(3);
 
           labelEntity.position = cartesian;
+          // labelEntity.show=true;
           labelEntity.label.show = true;
           labelEntity.label.text =
               'Lon: ' + ('   ' + longitudeString).slice(-7) + '\u00B0' +
