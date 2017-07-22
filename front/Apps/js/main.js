@@ -31,7 +31,7 @@ var layers = viewer.scene.imageryLayers;
 var t = viewer.entities.add(new Cesium.Entity());
 var k = viewer.entities.add(new Cesium.Entity());
 var tuekta_terrainProvider = new Cesium.CesiumTerrainProvider({
-  url: ' http://localhost:8888/tilesets/tiles/'
+  url: ' http://207.154.237.111:8888/tilesets/tiles/'
 });
 var tuekta_cent = Cesium.Cartesian3.fromDegrees(85.88383177000060, 50.83765943000035);
 var tuekta_hpr = new Cesium.HeadingPitchRoll(Cesium.Math.toRadians(-0.90), 0.0, Cesium.Math.toRadians(0));
@@ -41,7 +41,7 @@ var tuekta_image = new Cesium.ImageryLayer(new Cesium.SingleTileImageryProvider(
   rectangle: Cesium.Rectangle.fromDegrees(85.8460710132402056, 50.8080086113231388, 85.9226210132402031, 50.8511286113231407)
 }));
 var karakol_terrainProvider = new Cesium.CesiumTerrainProvider({
-  url: ' http://localhost:8000/tilesets/tiles/'
+  url: ' http://207.154.237.111:8000/tilesets/tiles/'
 });
 
 
@@ -364,7 +364,7 @@ function create(model) {
 // sending the request using the picked object id
 function get_description(id, onsuccess) {
 
-  var url = 'http://localhost:3000/buildings/' + id;
+  var url = 'http://207.154.237.111:3000/buildings/' + id;
   var query = {};
   var type = 'get';
   var content_type = "application/json; charset=utf-8";

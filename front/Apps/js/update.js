@@ -2,7 +2,7 @@ function update_article(id){
   //var id = document.getElementById("iden").value;
   var description = document.getElementById("desc").value;
   var image = document.getElementById("basic-url").value;
-  var url = 'http://localhost:3000/buildings/' + id;
+  var url = 'http://207.154.237.111:3000/buildings/' + id;
   var query = {'description': description,'image_url':image}
   var type = 'put';
   var content_type = "application/json; charset=utf-8";
@@ -18,7 +18,7 @@ function update_article(id){
       // reponse
 
       $('#myModal').modal('toggle');
-  
+
 
     },
     error: function (data){
@@ -32,7 +32,7 @@ function update_article(id){
 // sending the request using the picked object id, this will give back the description from MongoDB
 function get_description(id, onsuccess){
 
-  var url = 'http://localhost:3000/buildings/' + id;
+  var url = 'http://207.154.237.111:3000/buildings/' + id;
   var query = {}
   var type = 'get';
   var content_type = "application/json; charset=utf-8";
