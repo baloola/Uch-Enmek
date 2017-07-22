@@ -1,0 +1,20 @@
+{
+    "name": "Uch-Enmek",
+    "description": "Archological village application",
+    "version": "0.0.1",
+    "private": true,
+	"main":"server.js",
+	"repository":{
+	},
+	"license":"Apache 2.0",
+    "dependencies": {
+        "express": "3.21.2",
+		 "cors": "2.8.1",
+		 "mongodb": "2.2.24",
+		 "body-parser":"1.16.1"
+		 
+		 
+		 
+		 
+    }
+}

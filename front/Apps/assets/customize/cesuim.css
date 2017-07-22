@@ -1,0 +1,38 @@
+@import url(../../../Build/Cesium/Widgets/widgets.css);
+html, body, #cesiumContainer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-top: 42px;
+  overflow: hidden;
+}
+
+.cesium-infoBox-title {
+  font-size: large;
+  background: #EFEFEF;
+}
+
+.cesium-infoBox {
+  position: absolute;
+  top: 50px;
+  right: 880px;
+  height: 80% width: 40%;
+  max-width: 480px;
+  background: #EFEFEF;
+  color: #0e338c;
+  border: 1px solid #EFEFEF;
+}
+
+button.cesium-infoBox-close {
+  color: #0e338c;
+}
+
+button.cesium-infoBox-close:hover {
+  background: #0e338c;
+  color: #EFEFEF;
+}
+
+.cesium-geocoder-searchButton {
+  background-color: #EFEFEF;
+  fill: #0e338c;
+}

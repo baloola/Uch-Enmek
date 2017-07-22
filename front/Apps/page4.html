@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Site made with Mobirise Website Builder v3.12.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v3.12.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/tud-262x128.png" type="image/x-icon">
+  <meta name="Uch Enmek model" content="">
+  <script src="../Build/Cesium/Cesium.js"></script>
+  <script src="../Build/Source/viewerCesiumNavigationMixin.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+  <link rel="stylesheet" href="assets/bootstrap-material-design-font/css/material.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/customize/cesuim.css">
+  <link rel="stylesheet" href="assets/customize/sidenav.css">
+</head>
+
+<style>
+  @import url(../Build/Cesium/Widgets/InfoBox/InfoBoxDescription.css);
+  html,
+  body,
+  .cesium-infoBox-description {
+    color: #0e338c;
+  }
+
+  .cesium-button:disabled {
+    background: #b4c2ed;
+    border-color: #0e338c;
+    ;
+    color: #b4c2ed;
+    fill: #EFEFEF;
+  }
+</style>
+</head>
+
+<body onkeydown="return keyDown(event);" onkeyup="return keyUp(event);">
+  <section id="menu-n">
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top">
+      <div class="container">
+
+        <div class="mbr-table">
+          <div class="mbr-table-cell">
+
+            <div class="navbar-brand">
+              <a href="https://tu-dresden.de/bu/umwelt/geo/ifk" class="navbar-logo"><img src="assets/images/tud-262x128.png" alt="Mobirise"></a>
+              <a class="navbar-caption" href="index.html">&nbsp; Uch Enmek</a>
+            </div>
+
+          </div>
+          <div class="mbr-table-cell">
+
+            <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="hamburger-icon"></div>
+                    </button>
+
+            <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
+              <li class="nav-item dropdown"><a class="nav-link link" href="index.html"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Home</a></li>
+              <li class="nav-item"><a class="nav-link link" href="./page4.html"><i class="fa fa-cube" style="font-size:20px;color:#0e338c"></i>3D Model</a></li>
+              <li class="nav-item"><a class="nav-link link" href="#" onclick="toggle()"><span style="font-size:20px;cursor:pointer;color:#0e338c" >&#9776;</span>Options</a></li>
+            </ul>
+            <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="close-icon"></div>
+                    </button>
+
+          </div>
+        </div>
+
+      </div>
+    </nav>
+
+  </section>
+
+
+
+
+
+  <div  id="cesiumContainer">
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="panel-group" id="accordionMenu" role="tablist" aria-multiselectable="true">
+
+        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="mbri-map-pin mbr-iconfont mbr-iconfont-btn"></span>Sites</a>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <tr>
+                                              <a class="navi" href="#" id="karakol">Karakol</a>
+                                        </tr>
+                                        <tr>
+                                                <a class="navi" href="#" id="tuekta">Tuekta</a>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+      <div class="panel panel-default">
+                          <div class="panel-heading">
+
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" ><span class="mbri-globe mbr-iconfont mbr-iconfont-btn"></span>Base Map</a>
+                          </div>
+                          <div id="collapseTwo" class="panel-collapse collapse ">
+                              <div class="panel-body">
+                                  <table class="table">
+                                      <tr>
+                                            <a class="navi" href="#" id="bing">Bing Maps</a>
+                                      </tr>
+                                      <tr>
+                                              <a class="navi" href="#" id="osm">Open Street Map</a>
+                                      </tr>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="panel panel-default">
+                                          <div class="panel-heading ">
+
+                                                  <a id="grave" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><img src="https://png.icons8.com/archeology/ultraviolet/20" title="Archeology" width="30" height="30">Kurgan  </a>
+                                          </div>
+                                        </div>
+
+
+      <div class="menu-bottom">
+
+
+
+        <div class="panel panel-default">
+          <ul class="navi">
+            <li>
+              <a>Buildings
+                <div class="material-switch pull-right">
+                  <input id="Buildings" name="some" type="checkbox" onclick="buildingcheck()"/>
+                  <label for="Buildings" class="label-primary"></label>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a>IKONOS imagery
+                <div class="material-switch pull-right">
+                  <input id="ikonos" name="some" type="checkbox" onclick="IkonosCheck()"/>
+                  <label for="ikonos" class="label-primary"></label>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a>Terrain
+                <div class="material-switch pull-right">
+                  <input id="terrain" name="some" type="checkbox" onclick="TerrainCheck()"/>
+                  <label for="terrain" class="label-primary"></label>
+                </div>
+              </a>
+            </li>
+            <li><a>GIS Data
+                <div class="material-switch pull-right">
+                    <input id="GIS" name="someSwitchOption001" type="checkbox" onclick="GIScheck()"/>
+                    <label for="GIS" class="label-primary"></label>
+                  </div>
+                  </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      </div>
+    </div>
+    <!-- <button class="accordion">Section 3</button>
+      <div class="panel">
+        <a href="#" id="ikonos">ikonos</a>
+      </div> -->
+
+
+
+
+
+
+
+  </div>
+<div class="" id="kurgans" style="visibility:hidden;">
+
+
+  <div id= "control" class="btn-group-vertical control ">
+    <div class="row" >
+        <div class="col">
+                <button href="#"  class="btn btn-xlarge" onclick="  balance()"/><span class="mbri-refresh mbr-iconfont mbr-iconfont-btn icons"style="color:#0e338c;padding-right: 0;"></span></button>
+          </div>
+          <div class="col">
+                <button href="#" id="in" onmousedown="moveForward=true;" onmouseup="moveForward=false;" class="btn btn-xlarge" /><span class="mbri-up mbr-iconfont mbr-iconfont-btn icons"style="color:#0e338c;padding-right: 0;"></span></button>
+          </div>
+                 <div class="col">
+                <button href="#" id="out" onmousedown="moveBackward=true;" onmouseup="moveBackward=false;" class="btn btn-xlarge" /><span class="mbri-down mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span></button>
+          </div>
+      </div>
+  </div>
+
+  <div id= "options" class="btn-group-vertical options ">
+    <div class="row" >
+
+                <button href="#" onclick="back()" class="btn btn-xlarge op" style="color:#0e338c;"/>EXIT MODE </button>
+
+
+                <button href="#"  class="btn btn-xlarge op" /><span class="mbri-question mbr-iconfont mbr-iconfont-btn icons"style="color:#0e338c;padding-right: 0;"></span</button>
+
+
+
+          </div>
+      </div>
+  </div>
+  </div>
+  </div>
+
+
+
+
+  <section class="mbr-section mbr-section-md-padding mbr-footer footer1" id="contacts1-q" style="background-color: rgb(239, 239, 239); padding-top: 30px; padding-bottom: 30px;">
+
+    <div class="container">
+      <div class="row">
+        <div class="mbr-footer-content col-xs-12 col-md-3">
+          <div><img src="assets/images/tud-128x62.png"></div>
+        </div>
+        <div class="mbr-footer-content col-xs-12 col-md-3">
+          <p><strong>Address</strong><br>Hülsse-Bau, 1st Floor, West Wing<br>Helmholtzstr. 10<br>01069 Dresden<br>Germany<br></p>
+        </div>
+        <div class="mbr-footer-content col-xs-12 col-md-3">
+          <p><strong>Contacts</strong><br> Email: steffi.sharma@tu-dresden.de<br> Phone: +49 351 463-34809<br> Fax: +49 451 463-37028</p>
+        </div>
+        <div class="mbr-footer-content col-xs-12 col-md-3">
+          <p><strong>web development</strong><br>Mussab Abdalla</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/ui.js"></script>
+
+  <script src="js/indoor.js"></script>
+
+
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/smooth-scroll/smooth-scroll.js"></script>
+  <script src="assets/jarallax/jarallax.js"></script>
+  <script src="assets/viewport-checker/jquery.viewportchecker.js"></script>
+  <script src="assets/dropdown/js/script.min.js"></script>
+  <script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+
+
+  <input name="animation" type="hidden">
+</body>
+
+</html>

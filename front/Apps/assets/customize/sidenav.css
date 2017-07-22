@@ -1,0 +1,192 @@
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  bottom: 60px;
+  left: 0;
+  font-weight: bold;
+  background-color: #EFEFEF;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 20px 15px 8px 10px;
+  text-decoration: none;
+  color: #0e338c;
+  display: block;
+  /*transition: 0.3s;*/
+}
+
+.sidenav a:hover, .offcanvas a:focus {
+  color: #b4c2ed;
+
+}
+
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 115px;
+  right: 25px;
+  padding-left: 8px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.navi {
+  padding-left: 0px;
+  padding-right: 0px;
+  list-style: none;
+  font-size: 80%;
+  font-weight: normal;
+}
+
+.navi .hidden {
+  visibility: visible;
+}
+
+.menu-bottom {
+  padding-top: 20%;
+}
+
+.material-switch>input[type="checkbox"] {
+  display: none;
+  left: 30px;
+}
+
+.material-switch>label {
+  cursor: pointer;
+  height: 0px;
+  position: relative;
+  width: 40px;
+}
+
+.material-switch>label::before {
+  background: rgb(0, 0, 0);
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  content: '';
+  height: 16px;
+  margin-top: -8px;
+  position: absolute;
+  opacity: 0.3;
+  transition: all 0.4s ease-in-out;
+  width: 40px;
+}
+
+.material-switch>label::after {
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  content: '';
+  height: 24px;
+  left: -4px;
+  margin-top: -8px;
+  position: absolute;
+  top: -4px;
+  transition: all 0.3s ease-in-out;
+  width: 24px;
+}
+
+.material-switch>input[type="checkbox"]:checked+label::before {
+  background: inherit;
+  opacity: 0.5;
+}
+
+.material-switch>input[type="checkbox"]:checked+label::after {
+  background: inherit;
+  left: 20px;
+}
+
+
+
+.control{
+    position:absolute;
+    bottom:13%;
+    right:5%;
+    display:block;
+
+}
+.options{
+  position:absolute;
+  bottom:75%;
+  right:6%;
+  display:block;
+
+}
+ 
+.col{
+padding:-15px -15px;
+
+}
+.btn-xlarge{
+  position: relative;
+  vertical-align: center;
+  margin: 30px;
+  margin-bottom:-15px;
+  /*width: 100%;*/
+  /*height: 100px;*/
+  padding: 18px 10px;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #EFEFEF;
+  border: 0;
+  border-bottom: 3px solid #0e338c;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -3px #0e338c;
+  box-shadow: inset 0 -3px #0e338c;
+}
+
+.op{
+  padding: 5px 5px;
+  margin-bottom:20px;
+
+}
+
+.btn-xlarge:active {
+  top: 2px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn-xlarge:hover {
+  background: #b4c2ed;
+
+}
+.btn-xlarge:focus{
+
+
+outline:none;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+.icons{
+
+      padding-right: none;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+
+@import url(assets/mobirise/css/mbr-additional.css);
+html,
+body,
+#menu-n .navbar-caption {
+  color: #0e338c;
+}
+
+#menu-n .link:hover {
+  color: #b4c2ed;
+}
