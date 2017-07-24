@@ -15,11 +15,11 @@ html, body, #cesiumContainer {
 .cesium-infoBox {
 
   min-width: 200px;
-  min-height: 300px;
+  min-height: 20%;
   position: absolute;
   top: 50px;
-  right: 880px;
-  height: 80% width: 40%;
+  left: 5px;
+  /*height: 80% width: 40%;*/
   max-width: 480px;
   background: #EFEFEF;
   color: #0e338c;

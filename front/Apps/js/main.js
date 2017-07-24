@@ -1,3 +1,19 @@
+/*eslint-env es6*/
+/* exported model_im*/
+/* exported other_im*/
+/* exported karakol*/
+/* exported tuekta*/
+/* exported model_im*/
+/* exported osm */
+/* exported bing */
+/* exported render */
+/* exported launch */
+/* exported moding */
+/* exported osm */
+/* exported osm */
+
+
+
 Cesium.BingMapsApi.defaultKey = 'AovQCWpnauHAxG1dQkX69IJyrXUHqCWGdG1xafecdti7Trv9aAn49GABW4umeIqJ';
 var viewer = new Cesium.Viewer('cesiumContainer', {
   selectionIndicator: false,
@@ -11,8 +27,8 @@ var viewer = new Cesium.Viewer('cesiumContainer', {
 });
 //  viewer.extend(Cesium.viewerCesiumInspectorMixin);
 
-viewer.extend(Cesium.viewerCesiumNavigationMixin,{});
-viewer.infoBox.frame.sandbox = "allow-same-origin allow-top-navigation allow-pointer-lock allow-popups allow-forms allow-scripts";
+viewer.extend(Cesium.viewerCesiumNavigationMixin, {});
+viewer.infoBox.frame.sandbox = 'allow-same-origin allow-top-navigation allow-pointer-lock allow-popups allow-forms allow-scripts';
 viewer.infoBox.frame.removeAttribute('sandbox');
 viewer.scene.globe.depthTestAgainstTerrain = true;
 viewer.scene.frameState.creditDisplay.addDefaultCredit(new Cesium.Credit('cesiumContainer', 'assets/images/tud-128x62.png ', 'https://tu-dresden.de/bu/umwelt/geo/ifk'));
@@ -22,12 +38,11 @@ var scene = viewer.scene;
 var camera = scene.camera;
 var handler = new Cesium.ScreenSpaceEventHandler(scene.canvas);
 var logoUrl = 'data/billboards/goat.jpg';
-var m, im,p, model_im, other_im, provider, current;
-var checked = true;
+var m, p, model_im, other_im, current,labelEntity;
 var GISisOn = false;
 var TerrainIsOn = false;
 var IkonosIsOn = false;
-var BuildingsIsON=false;
+var BuildingsIsON = false;
 var layers = viewer.scene.imageryLayers;
 var t = viewer.entities.add(new Cesium.Entity());
 var k = viewer.entities.add(new Cesium.Entity());
@@ -55,7 +70,7 @@ var karakol_cent = Cesium.Cartesian3.fromDegrees(85.95298, 50.81486, 884.4);
 var karakol_hpr = new Cesium.HeadingPitchRoll(Cesium.Math.toRadians(-0.76), 0.0, Cesium.Math.toRadians(0));
 var karakol_orientation = Cesium.Transforms.headingPitchRollQuaternion(karakol_cent, karakol_hpr);
 
-var bing_source =new Cesium.ImageryLayer( new Cesium.BingMapsImageryProvider({
+var bing_source = new Cesium.ImageryLayer(new Cesium.BingMapsImageryProvider({
   url: 'https://dev.virtualearth.net'
 }));
 
@@ -64,12 +79,13 @@ var osm_source = new Cesium.ImageryLayer(Cesium.createOpenStreetMapImageryProvid
   url: 'https://a.tile.openstreetmap.org/'
 }));
 var karakol = {
-  camera:{
-    destination: Cesium.Cartesian3.fromDegrees(85.95115667356953,50.78042115209972,3079.575032013868),
-    orientation:{heading: 0.0,
-            pitch : Cesium.Math.toRadians(-35.0),
-            roll : 0.0
-        }
+  camera: {
+    destination: Cesium.Cartesian3.fromDegrees(85.95115667356953, 50.78042115209972, 3079.575032013868),
+    orientation: {
+      heading: 0.0,
+      pitch: Cesium.Math.toRadians(-35.0),
+      roll: 0.0
+    }
   },
   other_image: tuekta_image,
   other: t,
@@ -93,12 +109,13 @@ var karakol = {
 
 
 var tuekta = {
-  camera:{
-    destination: Cesium.Cartesian3.fromDegrees(85.88276761171318, 50.81612402131404,2787.550547062463),
-    orientation:{heading: 0.0,
-            pitch : Cesium.Math.toRadians(-35.0),
-            roll : 0.0
-        }
+  camera: {
+    destination: Cesium.Cartesian3.fromDegrees(85.88276761171318, 50.81612402131404, 2787.550547062463),
+    orientation: {
+      heading: 0.0,
+      pitch: Cesium.Math.toRadians(-35.0),
+      roll: 0.0
+    }
   },
   other_image: karakol_image,
   other: k,
@@ -234,11 +251,9 @@ function flyto(model) {
 
 
 
-
-
 function render(threeD) {
 
-   viewer.entities.add({
+  viewer.entities.add({
     name: 'Loading......',
     parent: threeD.parent,
     orientation: threeD.orientation,
@@ -248,10 +263,9 @@ function render(threeD) {
       uri: threeD.uri
     }
   });
-layers.add(threeD.image);
-threeD.image.show=false;
-
-  threeD.parent.show=false;
+  layers.add(threeD.image);
+  threeD.image.show = false;
+  threeD.parent.show = false;
   current = threeD;
 
 
@@ -263,7 +277,7 @@ function launch(model) {
     create(model);
   }
 
-  if (IkonosIsOn){
+  if (IkonosIsOn) {
     ikonos(model);
   }
 
@@ -286,7 +300,7 @@ function moding(mode) {
 
   if (current_mode != mode) {
 
-    layers.remove(mode.other,false);
+    layers.remove(mode.other, false);
     layers.add(mode.source);
 
     viewer.dataSources.removeAll();
@@ -306,21 +320,17 @@ function moding(mode) {
 
 
 function jsonLayOut(model, mode) {
-if (model!=current || !GISisOn || mode !=current_mode) {
+  if (model != current || !GISisOn || mode != current_mode) {
 
-
-  viewer.dataSources.removeAll();
-
-
-
-  viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.buildings, mode.buildings));
-  viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.archeo, mode.archeo));
-  viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.road, mode.road));
-  viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.forest, mode.forest));
-  viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.stone, mode.stone));
-  //viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.stone_2,mode.stone_2));
-  viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.river, mode.river));
-}
+    viewer.dataSources.removeAll();
+    viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.buildings, mode.buildings));
+    viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.archeo, mode.archeo));
+    viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.road, mode.road));
+    viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.forest, mode.forest));
+    viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.stone, mode.stone));
+    //viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.stone_2,mode.stone_2));
+    viewer.dataSources.add(Cesium.GeoJsonDataSource.load(model.river, mode.river));
+  }
   GISisOn = true;
   return GISisOn;
 }
@@ -340,10 +350,10 @@ function TerrainBuild(model) {
 function ikonos(model) {
 
   if (model != current) {
-    model.other_image.show = false ;
+    model.other_image.show = false;
 
   }
-  model.image.show=true;
+  model.image.show = true;
   layers.raiseToTop(model.image);
   IkonosIsOn = true;
   return IkonosIsOn;
@@ -357,7 +367,7 @@ function create(model) {
   p = model.parent;
   m.show = false;
   p.show = true;
-  BuildingsIsON=true;
+  BuildingsIsON = true;
   return BuildingsIsON;
 
 }
@@ -368,7 +378,7 @@ function get_description(id, onsuccess) {
   var url = 'http://207.154.237.111:3000/buildings/' + id;
   var query = {};
   var type = 'get';
-  var content_type = "application/json; charset=utf-8";
+  var content_type = 'application/json; charset=utf-8';
   var data = JSON.stringify(query);
 
   jQuery.ajax({
@@ -378,35 +388,33 @@ function get_description(id, onsuccess) {
     data: data,
     success: function(response) {
       // response
-      console.log(response);
-      console.log('set info box with this description: ' + response.description);
       onsuccess(response.description, response.image_url);
     },
     error: function(data) {
       // error
-      console.log(`Error: ${data}`);
+
     }
   });
 }
 
 // enable this to see coordinates of the picked object
 
-var labelEntity = viewer.entities.add({
-    label : {
-        show : false,
-        showBackground : true,
-        font : '14px monospace',
-        horizontalOrigin : Cesium.HorizontalOrigin.LEFT,
-        verticalOrigin : Cesium.VerticalOrigin.TOP,
-        pixelOffset : new Cesium.Cartesian2(15, 0)
-    }
+labelEntity = viewer.entities.add({
+  label: {
+    show: false,
+    showBackground: true,
+    font: '14px monospace',
+    horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
+    verticalOrigin: Cesium.VerticalOrigin.TOP,
+    pixelOffset: new Cesium.Cartesian2(15, 0)
+  }
 });
 
 
 
 
 handler.setInputAction(function(movement) {
-  var foundPosition = false;
+  // var foundPosition = false;
   var cartesian = scene.pickPosition(movement.position);
   var pickedObject = scene.pick(movement.position);
 
@@ -416,13 +424,13 @@ handler.setInputAction(function(movement) {
     if (Cesium.defined(pickedObject.node) && Cesium.defined(pickedObject.mesh)) {
 
 
-      var primitive = pickedObject.primitive;
+
 
       var id = pickedObject.node.name;
-      var page = get_description(id, function(description, image_url) {
+       get_description(id, function(description, image_url) {
 
         var entity_1 = new Cesium.Entity({
-          name: "THIS IS Object NO " + "'" + id + "'"
+          name: 'THIS IS Object NO ' + '"' + id + '"'
         });
         var des = description;
 
@@ -444,7 +452,7 @@ handler.setInputAction(function(movement) {
      </p>
      </div>
      <div>
-     <a href='update.html?id=${id}' target=_blank>Update Description</a>
+     <a href="update.html?id=${id}" target=_blank>Update Description</a>
      </div>
      </div>
      `;
@@ -455,34 +463,29 @@ handler.setInputAction(function(movement) {
 
 
       if (Cesium.defined(cartesian)) {
-          var cartographic = Cesium.Cartographic.fromCartesian(cartesian);
-          var longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(4);
-          var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(4);
-          var heightString = cartographic.height.toFixed(3);
+        var cartographic = Cesium.Cartographic.fromCartesian(cartesian);
+        var longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(4);
+        var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(4);
+        var heightString = cartographic.height.toFixed(3);
 
-          labelEntity.position = cartesian;
-          // labelEntity.show=true;
-          labelEntity.label.show = true;
-          labelEntity.label.text =
-              'Lon: ' + ('   ' + longitudeString).slice(-7) + '\u00B0' +
-              '\nLat: ' + ('   ' + latitudeString).slice(-7) + '\u00B0' +
-              '\nAlt: ' + ('   ' + heightString).slice(-7) + 'm';
-
+        labelEntity.position = cartesian;
+        labelEntity.label.show = true;
+        labelEntity.label.text =
+          'Lon: ' + ('   ' + longitudeString).slice(-7) + '\u00B0' +
+          '\nLat: ' + ('   ' + latitudeString).slice(-7) + '\u00B0' +
+          '\nAlt: ' + ('   ' + heightString).slice(-7) + 'm';
 
 
-          labelEntity.label.eyeOffset = new Cesium.Cartesian3(0.0, 0.0, camera.frustum.near * 1.5 - Cesium.Cartesian3.distance(cartesian, camera.position));
 
-          foundPosition = true;
+        labelEntity.label.eyeOffset = new Cesium.Cartesian3(0.0, 0.0, camera.frustum.near * 1.5 - Cesium.Cartesian3.distance(cartesian, camera.position));
+
+        // foundPosition = true;
       }
 
 
 
-
-
-
-
-
-
+      // TODO: highlight material on event
+      // var primitive = pickedObject.primitive;
       // var meshh = pickedObject.mesh._materials;
       // var r =[];
       // var newOne =  primitive.getMaterial('Material.18');
@@ -499,7 +502,8 @@ handler.setInputAction(function(movement) {
 
 
 
-  }  else {
-            labelEntity.label.show = false;
-    }
+  } else {
+    // foundPosition = false;
+    labelEntity.label.show = false;
+  }
 }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
