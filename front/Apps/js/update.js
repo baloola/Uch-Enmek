@@ -1,8 +1,7 @@
 
-/*global jQuery*/
 
-function update_article(id) { //
-  var id = document.getElementById('iden').value;
+function update_article(id) { 
+
   var description = document.getElementById('desc').value;
   var image = document.getElementById('basic-url').value;
   var url = 'http://207.154.237.111:3000/buildings/' + id;

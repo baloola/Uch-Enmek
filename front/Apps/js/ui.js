@@ -1,8 +1,4 @@
-/*eslint-env es6*/
-/* exported TerrainCheck*/
-/* exported GIScheck*/
-/* exported IkonosCheck*/
-/* exported back */
+
 var jj = false;
 
 

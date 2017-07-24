@@ -1,16 +1,4 @@
-/*eslint-env es6*/
-/* exported model_im*/
-/* exported other_im*/
-/* exported karakol*/
-/* exported tuekta*/
-/* exported model_im*/
-/* exported osm */
-/* exported bing */
-/* exported render */
-/* exported launch */
-/* exported moding */
-/* exported osm */
-/* exported osm */
+
 
 
 

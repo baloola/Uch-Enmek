@@ -1,10 +1,4 @@
-/* exported balance */
-/* exported update */
-/* exported keyDown */
-/* exported keyUp */
-/* exported setviewer */
-/* exported kurgan */
-/* exported reset */
+
 
 var canvas = viewer.canvas;
 var ellipsoid = scene.globe.ellipsoid;
@@ -142,19 +136,19 @@ function balance() {
 
 
 function reset() {
-  navegate(controller, set);
+  navigate(controller, 5);
   launch(current);
 }
 
 
 
-function navigate(options, stat) {
+function navigate(options, set) {
   options.enableRotate = set;
   options.enableTranslate = set;
   options.enableZoom = set;
   options.enableTilt = set;
   options.enableTilt = set;
-  if (stat) {
+  if (set) {
     viewer.clock.onTick.removeEventListener(d);
   } else {
     viewer.clock.onTick.addEventListener(d);
