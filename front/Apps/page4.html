@@ -4,6 +4,7 @@
 <head>
   <!-- Site made with Mobirise Website Builder v3.12.1, https://mobirise.com -->
   <meta charset="UTF-8">
+  <meta http-equiv="pragma" content="no-cache" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v3.12.1, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +41,6 @@
     color: #b4c2ed;
     fill: #EFEFEF;
   }
-
 </style>
 
 </head>
@@ -56,7 +56,7 @@
 
             <div class="navbar-brand">
               <a href="https://tu-dresden.de/bu/umwelt/geo/ifk" class="navbar-logo"><img src="assets/images/tud-262x128.png" alt="Mobirise"></a>
-              <a class="navbar-caption" href="index.html">&nbsp; Uch Enmek</a>
+              <a class="navbar-caption nav-link" href="index.html">&nbsp; Uch Enmek</a>
             </div>
 
           </div>
@@ -87,7 +87,7 @@
 
 
 
-  <div  id="cesiumContainer">
+  <div id="cesiumContainer">
 
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -98,96 +98,127 @@
       <div class="panel-group" id="accordionMenu" role="tablist" aria-multiselectable="true">
 
         <div class="panel panel-default">
-                            <div class="panel-heading">
+          <div class="panel-heading">
 
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="mbri-map-pin mbr-iconfont mbr-iconfont-btn"></span>Sites</a>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <table class="table">
-                                        <tr>
-                                              <a class="navi" href="#" id="karakol">Karakol</a>
-                                        </tr>
-                                        <tr>
-                                                <a class="navi" href="#" id="tuekta">Tuekta</a>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-
-      <div class="panel panel-default">
-                          <div class="panel-heading">
-
-                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" ><span class="mbri-globe mbr-iconfont mbr-iconfont-btn"></span>Base Map</a>
-                          </div>
-                          <div id="collapseTwo" class="panel-collapse collapse ">
-                              <div class="panel-body">
-                                  <table class="table">
-                                      <tr>
-                                            <a class="navi" href="#" id="bing">Bing Maps</a>
-                                      </tr>
-                                      <tr>
-                                              <a class="navi" href="#" id="osm">Open Street Map</a>
-                                      </tr>
-                                  </table>
-                              </div>
-                          </div>
-                      </div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><img src="https://png.icons8.com/geo-fence/ultraviolet/20" title="Geo-fence" width="30" height="30">&nbsp;Site Visits</a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+              <table class="table">
+                <tr>
+                  <a class="navi" href="#" id="uch">Uch Enmek</a>
+                </tr>
+                <tr>
+                  <a class="navi" href="#" id="karakol">Karakol</a>
+                </tr>
+                <tr>
+                  <a class="navi" href="#" id="tuekta">Tuekta</a>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
 
 
-                      <div class="panel panel-default">
-                                          <div class="panel-heading ">
+        <div class="panel panel-default">
+          <div class="panel-heading">
 
-                                                  <a id="grave" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><img src="https://png.icons8.com/archeology/ultraviolet/20" title="Archeology" width="30" height="30">Kurgan  </a>
-                                          </div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><img src="https://png.icons8.com/world-map/ultraviolet/20" title="World Map" width="30" height="30">&nbsp;Base Map</a>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse ">
+            <div class="panel-body">
+              <table class="table">
+                <tr>
+                  <a class="navi" href="#" id="topo">Topographic Map</a>
+                </tr>
+                <tr>
+                  <a class="navi" href="#">IKONOS imagery
+                                        <div class="material-switch pull-right">
+                                          <input id="ikonos" name="some" type="checkbox" onclick="IkonosCheck()"/>
+                                          <label for="ikonos" class="label-primary"></label>
                                         </div>
+                                      </a>
+                </tr>
+                <tr>
+                  <a class="navi" href="#" id="bing">Bing Maps</a>
+                </tr>
+                <tr>
+                  <a class="navi" href="#" id="osm">Open Street Map</a>
+                </tr>
+
+              </table>
+            </div>
+          </div>
+        </div>
 
 
-      <div class="menu-bottom">
+
 
 
 
         <div class="panel panel-default">
-          <ul class="navi">
-            <li>
-              <a>Buildings
+          <div class="panel-heading">
+
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><img src="https://png.icons8.com/layers/ultraviolet/20" title="Layers" width="30" height="30">&nbsp;Thematic Layers</a>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse ">
+            <div class="panel-body">
+              <table class="table">
+                <tr>
+
+                  <a class="navi" href="#">Natural Features
                 <div class="material-switch pull-right">
+                    <input id="natural" value="natural" type="checkbox" onclick="draw('natural','natural')"/>
+                    <label for="natural" class="label-primary"></label>
+                  </div>
+                  </a>
+                </tr>
+                <a class="navi" href="#">Man-Made Features
+                <div class="material-switch pull-right">
+                    <input id="manMade" value="manMade" type="checkbox" onclick="draw('manMade','manMade')"/>
+                    <label for="manMade" class="label-primary"></label>
+                  </div>
+                  </a>
+                </tr>
+                <a class="navi" href="#">Archeological Sites
+                <div class="material-switch pull-right">
+                    <input id="arc" value="arc" type="checkbox" onclick="draw('arc','arc')"/>
+                    <label for="arc" class="label-primary"></label>
+                  </div>
+                  </a>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading ">
+
+            <a id="grave" href="#"><img src="https://png.icons8.com/archeology/ultraviolet/20" title="Archeology" width="30" height="30">&nbsp;Kurgan Model </a>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="panel panel-default">
+          <div class="panel-heading ">
+
+            <a href="#"><img src="https://png.icons8.com/front-view/ultraviolet/20" title="Front View" width="30" height="30">&nbsp;3D Objects
+                <div class=" navi material-switch pull-right">
                   <input id="Buildings" name="some" type="checkbox" onclick="buildingcheck()"/>
                   <label for="Buildings" class="label-primary"></label>
                 </div>
               </a>
-            </li>
-            <li>
-              <a>IKONOS imagery
-                <div class="material-switch pull-right">
-                  <input id="ikonos" name="some" type="checkbox" onclick="IkonosCheck()"/>
-                  <label for="ikonos" class="label-primary"></label>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a>Terrain
-                <div class="material-switch pull-right">
-                  <input id="terrain" name="some" type="checkbox" onclick="TerrainCheck()"/>
-                  <label for="terrain" class="label-primary"></label>
-                </div>
-              </a>
-            </li>
-            <li><a>GIS Data
-                <div class="material-switch pull-right">
-                    <input id="GIS" name="someSwitchOption001" type="checkbox" onclick="GIScheck()"/>
-                    <label for="GIS" class="label-primary"></label>
-                  </div>
-                  </a>
-            </li>
-          </ul>
-        </div>
 
-      </div>
+          </div>
+
+        </div>
       </div>
     </div>
+
     <!-- <button class="accordion">Section 3</button>
       <div class="panel">
         <a href="#" id="ikonos">ikonos</a>
@@ -200,30 +231,30 @@
 
 
   </div>
-<div class="" id="kurgans" style="visibility:hidden;">
+  <div class="" id="kurgans" style="visibility:hidden;">
 
 
-  <div id= "control" class="btn-group-vertical control ">
-    <div class="row" >
+    <div id="control" class="btn-group-vertical control ">
+      <div class="row">
         <div class="col">
-                <button href="#"  class="btn btn-xlarge" onclick="  balance()"/><span class="mbri-refresh mbr-iconfont mbr-iconfont-btn icons"style="color:#0e338c;padding-right: 0;"></span></button>
-          </div>
-          <div class="col">
-                <button href="#" id="in" onmousedown="moveForward=true;" onmouseup="moveForward=false;" class="btn btn-xlarge" /><span class="mbri-up mbr-iconfont mbr-iconfont-btn icons"style="color:#0e338c;padding-right: 0;"></span></button>
-          </div>
-                 <div class="col">
-                <button href="#" id="out" onmousedown="moveBackward=true;" onmouseup="moveBackward=false;" class="btn btn-xlarge" /><span class="mbri-down mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span></button>
-          </div>
+          <button href="#" class="btn btn-xlarge" onclick="  balance()" /><span class="mbri-refresh mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span></button>
+        </div>
+        <div class="col">
+          <button href="#" id="in" onmousedown="moveForward=true;" onmouseup="moveForward=false;" class="btn btn-xlarge" /><span class="mbri-up mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span></button>
+        </div>
+        <div class="col">
+          <button href="#" id="out" onmousedown="moveBackward=true;" onmouseup="moveBackward=false;" class="btn btn-xlarge" /><span class="mbri-down mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span></button>
+        </div>
       </div>
-  </div>
+    </div>
 
-  <div id= "options" class="btn-group-vertical options ">
-    <div class="row" >
+    <div id="options" class="btn-group-vertical options ">
+      <div class="row">
 
-                <button href="#" onclick="back()" class="btn btn-xlarge op" style="color:#0e338c;"/>EXIT MODE </button>
+        <button href="#" onclick="back()" class="btn btn-xlarge op" style="color:#0e338c;" />EXIT MODE </button>
 
 
-                <button href="#"  class="btn btn-xlarge op" /><span class="mbri-question mbr-iconfont mbr-iconfont-btn icons"style="color:#0e338c;padding-right: 0;"></span</button>
+        <button href="#" class="btn btn-xlarge op" /><span class="mbri-question mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span</button>
 
 
 

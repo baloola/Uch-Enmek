@@ -1,4 +1,10 @@
-
+/* exported balance */
+/* exported update */
+/* exported keyDown */
+/* exported keyUp */
+/* exported hideDefaultBar */
+/* exported kurgan */
+/* exported reset */
 
 var canvas = viewer.canvas;
 var ellipsoid = scene.globe.ellipsoid;
@@ -100,7 +106,7 @@ var d = function indoor(colck) {
   }
 };
 
-function setviewer() {
+function hideDefaultBar() {
   viewer.navigationHelpButton.container.hidden = true;
 
 }
@@ -136,7 +142,7 @@ function balance() {
 
 
 function reset() {
-  navigate(controller, 5);
+  navigate(controller, true);
   launch(current);
 }
 

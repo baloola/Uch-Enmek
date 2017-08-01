@@ -1,9 +1,7 @@
+function update_article(id) {
 
-
-function update_article(id) { 
-
-  var description = document.getElementById('desc').value;
-  var image = document.getElementById('basic-url').value;
+  var description = $('#desc').value;
+  var image = $('#basic-url').value;
   var url = 'http://207.154.237.111:3000/buildings/' + id;
   var query = {
     'description': description,
@@ -13,7 +11,7 @@ function update_article(id) {
   var content_type = 'application/json; charset=utf-8';
   var data = JSON.stringify(query);
 
-   jQuery.ajax({
+  jQuery.ajax({
     url: url,
 
     type: type,

@@ -13,7 +13,6 @@ html, body, #cesiumContainer {
 }
 
 .cesium-infoBox {
-
   min-width: 200px;
   min-height: 20%;
   position: absolute;
