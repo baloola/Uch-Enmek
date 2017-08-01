@@ -218,8 +218,8 @@ var tuekta = {
   image: tuekta_image,
   scale: 100,
   uri: 'data/3d/tuekta.gltf',
-  manMade: [tue_build, tue_road],
-  natural: [tue_stone, tue_river, tue_green, tue_forest, tuek_muni],
+  manMade: [tue_build, tue_road,tuek_muni],
+  natural: [tue_stone, tue_river, tue_green, tue_forest],
   arc: [tue_archeo]
 
 };
