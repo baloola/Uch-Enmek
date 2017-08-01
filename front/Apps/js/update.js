@@ -1,7 +1,7 @@
 function update_article(id) {
 
-  var description = $('#desc').value;
-  var image = $('#basic-url').value;
+  var description = $('#desc').val();
+  var image = $('#basic-url').val();
   var url = 'http://207.154.237.111:3000/buildings/' + id;
   var query = {
     'description': description,

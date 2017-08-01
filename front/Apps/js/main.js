@@ -67,7 +67,7 @@ outline.load('data/GIS/main_frame.json', {
   clampToGround: true
 });
 park.load('data/GIS/uch_enmek.json', {
-  fill: Cesium.Color.RED.withAlpha(0.3),
+  fill: Cesium.Color.WHITE.withAlpha(0.4),
   clampToGround: true
 });
 
@@ -86,17 +86,17 @@ var laylay = [{
   }, {
     name: 'tuek_muni',
     path: 'data/GIS/tuek_muni.json',
-    alpha: 0.6,
+    alpha: 0.7,
     fill: '#fcb05f'
   }, {
     name: 'kara_muni',
     path: 'data/GIS/kara_muni.json',
-    alpha: 0.6,
+    alpha: 0.7,
     fill: '#fcb05f'
   }, {
     name: 'tue_build',
     path: 'data/GIS/tuek_buildings.geojson',
-    alpha: 1,
+    alpha: 0.7,
     fill: '#370091'
   }, {
     name: 'kara_green',
@@ -112,7 +112,7 @@ var laylay = [{
   {
     name: 'kara_build',
     path: 'data/GIS/kara_buildings.geojson',
-    alpha: 1,
+    alpha: 0.7,
     fill: '#370091'
   }, {
     name: 'kara_forest',
@@ -127,12 +127,12 @@ var laylay = [{
   }, {
     name: 'kara_road',
     path: 'data/GIS/kara_road.geojson',
-    alpha: 1,
+    alpha: 0.7,
     fill: '#000000'
   }, {
     name: 'tue_road',
     path: 'data/GIS/tuek_road.geojson',
-    alpha: 1,
+    alpha: 0.7,
     fill: '#000000'
   }, {
     name: 'kara_river',
@@ -257,23 +257,14 @@ viewer.entities.add({
     scale: 0.03
   }
 });
-viewer.entities.add({
-  position: Cesium.Cartesian3.fromDegrees(85.75, 50.64, 1000),
-  label: {
-    text: 'UCH ENMEK',
-    translucencyByDistance: new Cesium.NearFarScalar(15e3, 0, 18e3, 1.0),
-    fillColor: Cesium.Color.fromCssColorString('#fffee2')
 
-
-  }
-});
 viewer.entities.add({
   position: Cesium.Cartesian3.fromDegrees(85.94, 50.81, 1000),
   label: {
     text: 'KARAKOL',
     translucencyByDistance: new Cesium.NearFarScalar(15e3, 0, 18e3, 1.0),
-    fillColor: Cesium.Color.fromCssColorString('#fffee2'),
-
+    fillColor: Cesium.Color.fromCssColorString('#fff7f7'),
+	font : '20px sans-serif'
   }
 });
 viewer.entities.add({
@@ -281,7 +272,8 @@ viewer.entities.add({
   label: {
     text: 'TUEKTA',
     translucencyByDistance: new Cesium.NearFarScalar(15e3, 0, 18e3, 1.0),
-    fillColor: Cesium.Color.fromCssColorString('#fffee2')
+    fillColor: Cesium.Color.fromCssColorString('#fff7f7'),
+	font:'20px sans-serif'
   }
 });
 
