@@ -47,9 +47,6 @@
   visibility: visible;
 }
 
-.menu-bottom {
-  padding-top: 20%;
-}
 
 .material-switch>input[type="checkbox"] {
   display: none;
@@ -233,7 +230,9 @@ min-width: 180px;
     color:#4d6191;
      
     }
-  
+  .legend-source .hidden{
+    visibility:visible;
+  }
   
 
     @media screen and (max-width: 750px) {
