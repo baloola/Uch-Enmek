@@ -163,7 +163,7 @@ var laylay = [{
   }
 ];
 
-laylay.map(function(laylay) {
+laylay.map(function (laylay) {
   this[laylay.name] = new Cesium.GeoJsonDataSource();
   this[laylay.name].load(laylay.path, {
     fill: Cesium.Color.fromCssColorString(laylay.fill).withAlpha(laylay.alpha),
@@ -218,7 +218,7 @@ var tuekta = {
   image: tuekta_image,
   scale: 100,
   uri: 'data/3d/tuekta.gltf',
-  manMade: [tue_build, tue_road,tuek_muni],
+  manMade: [tue_build, tue_road, tuek_muni],
   natural: [tue_stone, tue_river, tue_green, tue_forest],
   arc: [tue_archeo]
 
@@ -264,7 +264,7 @@ viewer.entities.add({
     text: 'KARAKOL',
     translucencyByDistance: new Cesium.NearFarScalar(15e3, 0, 18e3, 1.0),
     fillColor: Cesium.Color.fromCssColorString('#fff7f7'),
-	font : '20px sans-serif'
+    font: '20px sans-serif'
   }
 });
 viewer.entities.add({
@@ -273,7 +273,7 @@ viewer.entities.add({
     text: 'TUEKTA',
     translucencyByDistance: new Cesium.NearFarScalar(15e3, 0, 18e3, 1.0),
     fillColor: Cesium.Color.fromCssColorString('#fff7f7'),
-	font:'20px sans-serif'
+    font: '20px sans-serif'
   }
 });
 
@@ -378,9 +378,11 @@ function GIScheck(model) {
   if (current != model) {
     viewer.dataSources.removeAll();
     current = model;
-    for (var i = 0; i < gisLayers.length; i++) {
-      draw(gisLayers[i]);
-    }
+    gisLayers.map(function (layers) {
+      draw(layers);
+    })
+
+
   }
   return current;
 }
@@ -424,11 +426,11 @@ function get_description(id, onsuccess) {
     type: type,
     contentType: content_type,
     data: data,
-    success: function(response) {
+    success: function (response) {
       // response
       onsuccess(response.description, response.image_url);
     },
-    error: function(data) {
+    error: function (data) {
       // error
 
     }
@@ -448,7 +450,7 @@ labelEntity = viewer.entities.add({
 });
 
 
-handler.setInputAction(function(movement) {
+handler.setInputAction(function (movement) {
   // var foundPosition = false;
   var cartesian = scene.pickPosition(movement.position);
   var pickedObject = scene.pick(movement.position);
@@ -458,7 +460,7 @@ handler.setInputAction(function(movement) {
     if (Cesium.defined(pickedObject.node) && Cesium.defined(pickedObject.mesh)) {
 
       var id = pickedObject.node.name;
-      get_description(id, function(description, image_url) {
+      get_description(id, function (description, image_url) {
 
         var entity_1 = new Cesium.Entity({
           name: 'THIS IS Object NO ' + '"' + id + '"'

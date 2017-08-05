@@ -9,7 +9,7 @@
   background-color: #EFEFEF;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 160px;
 }
 
 .sidenav a {
@@ -116,7 +116,7 @@
   display:block;
 
 }
- 
+
 .col{
 padding:-15px -15px;
 
@@ -170,16 +170,79 @@ box-shadow: none;
       padding-right: none;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
+
+.my-legend{
+  
+  position: relative;
+  width: 20%;
+  height: 25%;
+  left:100%;
+  bottom:42%; 
+  min-width: 180px;
+  margin-right: 5px;
+  transition: 0.5s;
+  color:#0e338c;
+  background-color:#EFEFEF;
+
+
 }
+   .legend-title {
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 3px;
+    font-weight: bold;
+    font-size: 90%;
+    }
 
+   .legend-scale ul {
+min-width: 180px;
+    background-color:#EFEFEF;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    list-style: none;
+    }
+  .legend-scale ul li {
 
+    font-size: 80%;
+    list-style: none;
+    margin-left: 3px;
+    line-height: 18px;
+    margin-bottom: 2px;
+    }
+   ul.legend-labels li span {
+
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 0;
+    border: 1px solid #999;
+    }
+   .legend-source {
+    background-color:#EFEFEF;
+    font-size: 70%;
+    color: #9ba7cc;
+    clear: both;
+    margin-top: 70%;
+    }
+   .legend-source strong{
+    color:#4d6191;
+     
+    }
+  
+  
+
+    @media screen and (max-width: 750px) {
+     
+      .sidenav a {
+        font-size: 18px;
+      }
+     
+    }
 @import url(assets/mobirise/css/mbr-additional.css);
 html,
 body,

@@ -37,7 +37,6 @@
   .cesium-button:disabled {
     background: #b4c2ed;
     border-color: #0e338c;
-    ;
     color: #b4c2ed;
     fill: #EFEFEF;
   }
@@ -91,10 +90,7 @@
 
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <br>
-      <br>
-      <br>
-      <br>
+      
       <div class="panel-group" id="accordionMenu" role="tablist" aria-multiselectable="true">
 
         <div class="panel panel-default">
@@ -152,10 +148,6 @@
         </div>
 
 
-
-
-
-
         <div class="panel panel-default">
           <div class="panel-heading">
 
@@ -168,7 +160,7 @@
 
                   <a class="navi" href="#">Natural Features
                 <div class="material-switch pull-right">
-                    <input id="natural" value="natural" type="checkbox" onclick="draw('natural','natural')"/>
+                    <input id="natural" value="natural" type="checkbox" onclick="draw('natural')"/>
                     <label for="natural" class="label-primary"></label>
                   </div>
                   </a>
@@ -199,10 +191,6 @@
         </div>
 
 
-
-
-
-
         <div class="panel panel-default">
           <div class="panel-heading ">
 
@@ -216,34 +204,68 @@
           </div>
 
         </div>
+
+<div class='legend-source'>&nbsp;Authors:
+      
+        <p><strong>&nbsp;-Nikolas Prechtel:</strong> Project design, coordination and data revisions,
+  generation of the colour composite from the IKONOS scene RGB + pan.
+  <br><strong>&nbsp;-Mussab Abdalla:</strong>Web development.
+  <br><strong>&nbsp;-Marcel Schmid & Manuel Burckhardt</strong> Tuekta 3D: model.
+  <br><strong>&nbsp;-Sebastian Zimmermann:</strong> Karakol 3D model.
+</p>
+ 
+      
+    </div>
+
+
+
+
+
       </div>
     </div>
 
-    <!-- <button class="accordion">Section 3</button>
-      <div class="panel">
-        <a href="#" id="ikonos">ikonos</a>
-      </div> -->
-
-
-
-
-
-
 
   </div>
-  <div class="" id="kurgans" style="visibility:hidden;">
+  <div id ='my-legend'class='my-legend'>
+    <div class='legend-title'> Thematic Layers</div>
+    <div class='legend-scale'>
+      <ul class='legend-labels'>
+        <li><span style='background:#f970f5;opacity:0.7;'></span>Burial Mounds</li>
+        <li><span style='background:#cbf7bb;opacity:0.7;'></span>Green Area</li>
+        <li><span style='background:#2c9107;opacity:0.7;'></span>Forest</li>
+        <li><span style='background:#3077e8;opacity:0.7;'></span>River</li>
+        <li><span style='background:#605d5d;opacity:0.7;'></span>Stone Coverage</li>
+        <li><span style='background:#3d3b3b;opacity:0.7;'></span>Rocks</li>
+        <li><span style='background:#000000;opacity:0.7;'></span>Road</li>
+        <li><span style='background:#370091;opacity:0.7;'></span>Buildings</li>
+        <li><span style='background:#fcb05f;opacity:0.7;'></span>Municipality</li>
+      </ul>
+    </div>
+    
+  </div>
 
+
+
+
+  <div class="" id="kurgans" style="visibility:hidden;">
 
     <div id="control" class="btn-group-vertical control ">
       <div class="row">
         <div class="col">
-          <button href="#" class="btn btn-xlarge" onclick="  balance()" /><span class="mbri-refresh mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span></button>
+          <button href="#" class="btn btn-xlarge" onclick="  balance()" /><span class="mbri-refresh mbr-iconfont mbr-iconfont-btn icons"
+            style="color:#0e338c;padding-right: 0;"></span></button>
         </div>
         <div class="col">
-          <button href="#" id="in" onmousedown="moveForward=true;" onmouseup="moveForward=false;" class="btn btn-xlarge" /><span class="mbri-up mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span></button>
+          <button href="#" id="in" onmousedown="moveForward=true;" onmouseup="moveForward=false;" class="btn btn-xlarge" />
+          <span
+            class="mbri-up mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span>
+            </button>
         </div>
         <div class="col">
-          <button href="#" id="out" onmousedown="moveBackward=true;" onmouseup="moveBackward=false;" class="btn btn-xlarge" /><span class="mbri-down mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span></button>
+          <button href="#" id="out" onmousedown="moveBackward=true;" onmouseup="moveBackward=false;" class="btn btn-xlarge" />
+          <span
+            class="mbri-down mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span>
+            </button>
         </div>
       </div>
     </div>
@@ -253,9 +275,7 @@
 
         <button href="#" onclick="back()" class="btn btn-xlarge op" style="color:#0e338c;" />EXIT MODE </button>
 
-
         <button href="#" class="btn btn-xlarge op" /><span class="mbri-question mbr-iconfont mbr-iconfont-btn icons" style="color:#0e338c;padding-right: 0;"></span</button>
-
 
 
           </div>

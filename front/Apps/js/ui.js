@@ -1,7 +1,7 @@
 var jj = false;
+var mq = window.matchMedia("(min-width: 765px)");
 
-
-$(document).ready(function() {
+$(document).ready(function () {
   jj = true;
   tog();
   render(tuekta);
@@ -43,8 +43,10 @@ function closeNav() {
 function draw(T_layer) {
   if (!uchIsOn) {
     var lay = current[T_layer];
+    var leg = document.getElementById(T_layer).checked;
+    show()
     for (var i = 0; i < lay.length; i++) {
-      if (document.getElementById(T_layer).checked) {
+      if (leg) {
 
         viewer.dataSources.add(lay[i]);
       } else {
@@ -116,40 +118,63 @@ function back() {
   jj = true;
 }
 
-document.getElementById('osm').addEventListener('click', function() {
+
+
+
+
+function show() {
+
+  if (document.getElementById('manMade').checked || document.getElementById('arc').checked || document.getElementById('natural').checked) {
+    if (mq.matches) {
+      // window width is at least 500px
+      document.getElementById('my-legend').style.left = '79%';
+    } else {
+      // window width is less than 500px
+      document.getElementById('my-legend').style.left = '55%';
+    }
+
+    console.log('show')
+  } else {
+    document.getElementById('my-legend').style.left = '100%';
+    console.log('hide');
+  }
+
+
+}
+document.getElementById('osm').addEventListener('click', function () {
   moding(osm);
 }, false);
 
-document.getElementById('bing').addEventListener('click', function() {
+document.getElementById('bing').addEventListener('click', function () {
   moding(bing);
 }, false);
 
-document.getElementById('topo').addEventListener('click', function() {
+document.getElementById('topo').addEventListener('click', function () {
   moding(topo_image);
 }, false);
 
-document.getElementById('uch').addEventListener('click', function() {
+document.getElementById('uch').addEventListener('click', function () {
   document.getElementById('Buildings').checked = false;
 
   buildingcheck();
   uch();
 }, false);
 
-document.getElementById('tuekta').addEventListener('click', function() {
+document.getElementById('tuekta').addEventListener('click', function () {
   viewer.dataSources.remove(outline);
   viewer.dataSources.remove(park);
   uchIsOn = false;
   launch(tuekta);
 }, false);
 
-document.getElementById('karakol').addEventListener('click', function() {
+document.getElementById('karakol').addEventListener('click', function () {
   viewer.dataSources.remove(outline);
   viewer.dataSources.remove(park);
   uchIsOn = false;
   launch(karakol);
 }, false);
 
-document.getElementById('grave').addEventListener('click', function() {
+document.getElementById('grave').addEventListener('click', function () {
   grave();
 
 }, false);
