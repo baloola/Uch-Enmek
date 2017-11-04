@@ -151,7 +151,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
 
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><img src="https://png.icons8.com/layers/ultraviolet/20" title="Layers" width="30" height="30">&nbsp;Thematic Layers</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><img src="https://png.icons8.com/layers/ultraviolet/20" title="Layers" width="30" height="30">&nbsp;Thematic Overlays</a>
           </div>
           <div id="collapseThree" class="panel-collapse collapse ">
             <div class="panel-body">
@@ -183,18 +183,13 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading ">
-
-            <a id="grave" href="#"><img src="https://png.icons8.com/archeology/ultraviolet/20" title="Archeology" width="30" height="30">&nbsp;Kurgan Model </a>
-          </div>
-        </div>
+        
 
 
         <div class="panel panel-default">
           <div class="panel-heading ">
 
-            <a href="#"><img src="https://png.icons8.com/front-view/ultraviolet/20" title="Front View" width="30" height="30">&nbsp;3D Objects
+            <a href="#"><img src="https://png.icons8.com/front-view/ultraviolet/20" title="Front View" width="30" height="30">&nbsp;2D/3D Depiction
                 <div class=" navi material-switch pull-right">
                   <input id="Buildings" name="some" type="checkbox" onclick="buildingcheck()"/>
                   <label for="Buildings" class="label-primary"></label>
@@ -204,7 +199,22 @@
           </div>
 
         </div>
+        <div class="panel panel-default">
+          <div class="panel-heading ">
 
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><img src="https://png.icons8.com/archeology/ultraviolet/20" title="Archeology" width="30" height="30">&nbsp;Schematic Models </a>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse ">
+            <div class="panel-body">
+              <table class="table">
+                <tr>
+                  <a class="navi" href="#" id="grave">Kurgan (Burial Mound)</a>
+                </tr>
+                
+              </table>
+            </div>
+          </div>
+        </div>
         </div>
       <div class='legend-source'>&nbsp;Authors:
       
@@ -222,19 +232,23 @@
 
   </div>
   <div id ='my-legend'class='my-legend'>
-    <div class='legend-title'> Thematic Layers</div>
+    <div class='legend-title'> Man-Made Features</div>
     <div class='legend-scale'>
       <ul class='legend-labels'>
-        <li><span style='background:#f970f5;opacity:0.7;'></span>Burial Mounds</li>
-        <li><span style='background:#cbf7bb;opacity:0.7;'></span>Green Area</li>
-        <li><span style='background:#2c9107;opacity:0.7;'></span>Forest</li>
-        <li><span style='background:#3077e8;opacity:0.7;'></span>River</li>
-        <li><span style='background:#605d5d;opacity:0.7;'></span>Stone Coverage</li>
-        <li><span style='background:#3d3b3b;opacity:0.7;'></span>Rocks</li>
-        <li><span style='background:#000000;opacity:0.7;'></span>Road</li>
-        <li><span style='background:#370091;opacity:0.7;'></span>Buildings</li>
-        <li><span style='background:#fcb05f;opacity:0.7;'></span>Municipality</li>
+        <li><span style='background:#f970f5;opacity:0.7;'></span>Burial Mound</li>
+        <li><span style='background:#fcb05f;opacity:0.7;'></span>Settlement</li>
+        <li><span style='background:#ff0000;opacity:0.7;'></span>Building</li>
+        <li><span style='background:#858687;opacity:0.7;'></span>Road,Track</li>        
       </ul>
+      <div class='legend-title'> Land Cover</div>
+      <ul class='legend-labels'>
+      <li><span style='background:#2c9107;opacity:0.7;'></span>Forest</li>
+      <li><span style='background:#cbf7bb;opacity:0.7;'></span>Meadow, Pasture</li>
+      <li><span style='background:#6e9b74;opacity:0.7;'></span>Stony Grounds</li>
+      <li><span style='background:#c2c3c4;opacity:0.7;'></span>Rock</li>
+      <li><span style='background:#3077e8;opacity:0.7;'></span>River, Lake</li>
+      
+    </ul>
     </div>
     
   </div>
